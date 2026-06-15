@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>水道救急センター | 24時間365日・最短30分で駆けつけ</title>
+  <meta name="description" content="水道・トイレのトラブルは水道救急センターへ！24時間365日受付、最短30分で駆けつけ。出張費・見積もり無料。全国対応。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:    #0a2a6e;
+      --blue-m:  #1a4db3;
+      --blue-l:  #e8f0ff;
+      --red:     #d81f26;
+      --red-l:   #fff0f0;
+      --orange:  #f5820d;
+      --yellow:  #ffd600;
+      --gray:    #f7f8fa;
+      --text:    #222;
+      --text-s:  #555;
+      --white:   #fff;
+      --radius:  12px;
+      --shadow:  0 4px 24px rgba(0,0,0,.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      background: var(--white);
+    }
+
+    /* ========== UTILITY ========== */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 80px 0; }
+    .section--gray { background: var(--gray); }
+    .section--blue { background: var(--blue); color: var(--white); }
+    .section-title {
+      font-size: clamp(22px, 4vw, 36px);
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--text-s);
+      margin-bottom: 48px;
+      font-size: 15px;
+    }
+    .section--blue .section-sub { color: rgba(255,255,255,.7); }
+    .accent { color: var(--red); }
+    .accent-o { color: var(--orange); }
+    .badge {
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      letter-spacing: .05em;
+    }
+
+    /* ========== STICKY HEADER ========== */
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--blue);
+      box-shadow: 0 2px 12px rgba(0,0,0,.2);
+    }
+    .sticky-header .inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      gap: 12px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon {
+      width: 40px; height: 40px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+    .logo-text { color: var(--white); font-weight: 900; font-size: 16px; line-height: 1.2; }
+    .logo-text span { font-size: 11px; font-weight: 400; display: block; opacity: .8; }
+    .header-tel {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .tel-label { color: rgba(255,255,255,.8); font-size: 11px; }
+    .tel-number {
+      color: var(--yellow);
+      font-size: clamp(20px, 4vw, 28px);
+      font-weight: 900;
+      text-decoration: none;
+      letter-spacing: .02em;
+    }
+    .tel-number::before { content: "📞 "; }
+    .tel-sub { color: rgba(255,255,255,.7); font-size: 10px; text-align: right; }
+
+    /* ========== HERO ========== */
+    .hero {
+      background: linear-gradient(135deg, #0a2a6e 0%, #1a4db3 50%, #0a2a6e 100%);
+      padding: 60px 0 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero .container { position: relative; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: end;
+    }
+    .hero-content { padding-bottom: 60px; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--red);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 0 0 rgba(216,31,38,.4); }
+      50% { box-shadow: 0 0 0 8px rgba(216,31,38,0); }
+    }
+    .hero-title {
+      font-size: clamp(26px, 5vw, 50px);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+    .hero-title .hl { color: var(--yellow); }
+    .hero-lead {
+      color: rgba(255,255,255,.85);
+      font-size: clamp(14px, 2vw, 16px);
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+    .hero-cta-wrap { display: flex; flex-direction: column; gap: 12px; }
+    .btn-hero-tel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--red);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: var(--radius);
+      padding: 16px 24px;
+      font-weight: 900;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 20px rgba(216,31,38,.4);
+    }
+    .btn-hero-tel:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(216,31,38,.5); }
+    .btn-hero-tel .btn-label { font-size: 12px; opacity: .9; }
+    .btn-hero-tel .btn-num { font-size: clamp(24px, 5vw, 36px); letter-spacing: .03em; }
+    .btn-hero-tel .btn-free { font-size: 11px; background: rgba(255,255,255,.2); border-radius: 4px; padding: 2px 8px; margin-top: 4px; }
+    .hero-points {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .hero-point {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      color: var(--white);
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .hero-point::before { content: "✓ "; color: var(--yellow); }
+
+    .hero-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .hero-illustration {
+      width: 100%;
+      max-width: 420px;
+      background: rgba(255,255,255,.05);
+      border-radius: 20px 20px 0 0;
+      padding: 32px 24px 0;
+      text-align: center;
+    }
+    .hero-illustration .worker-svg { font-size: 120px; line-height: 1; margin-bottom: 16px; }
+    .hero-numbers {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,.1);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .hero-num-item {
+      background: rgba(255,255,255,.08);
+      padding: 16px 8px;
+      text-align: center;
+    }
+    .hero-num-val {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--yellow);
+      line-height: 1;
+    }
+    .hero-num-val span { font-size: 14px; }
+    .hero-num-label { font-size: 11px; color: rgba(255,255,255,.7); margin-top: 4px; }
+
+    /* ========== MARQUEE ========== */
+    .marquee-bar {
+      background: var(--orange);
+      padding: 10px 0;
+      overflow: hidden;
+    }
+    .marquee-inner {
+      display: flex;
+      gap: 60px;
+      white-space: nowrap;
+      animation: marquee 20s linear infinite;
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .marquee-item {
+      color: var(--white);
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .marquee-item::before { content: "⚡ "; }
+
+    /* ========== TRUST BAND ========== */
+    .trust-band { padding: 40px 0; }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .trust-item {
+      text-align: center;
+      padding: 24px 16px;
+      border-radius: var(--radius);
+      border: 2px solid var(--blue-l);
+      background: var(--white);
+      box-shadow: var(--shadow);
+      transition: transform .2s;
+    }
+    .trust-item:hover { transform: translateY(-4px); }
+    .trust-icon { font-size: 40px; margin-bottom: 10px; }
+    .trust-num {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--blue);
+      line-height: 1;
+    }
+    .trust-num span { font-size: 15px; }
+    .trust-label { font-size: 13px; color: var(--text-s); margin-top: 4px; }
+
+    /* ========== SERVICES ========== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(0,0,0,.14); }
+    .service-img {
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+    }
+    .service-img--blue { background: linear-gradient(135deg, #e8f0ff, #c5d8ff); }
+    .service-img--teal { background: linear-gradient(135deg, #e0f7f4, #b2ede8); }
+    .service-img--green { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); }
+    .service-img--orange { background: linear-gradient(135deg, #fff3e0, #ffe0b2); }
+    .service-img--red { background: linear-gradient(135deg, #fce4ec, #f8bbd0); }
+    .service-img--purple { background: linear-gradient(135deg, #f3e5f5, #e1bee7); }
+    .service-body { padding: 20px; }
+    .service-name { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+    .service-desc { font-size: 13px; color: var(--text-s); line-height: 1.6; margin-bottom: 12px; }
+    .service-price {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+    }
+    .service-price .from { color: var(--text-s); }
+    .service-price .num { font-size: 20px; font-weight: 900; color: var(--red); }
+    .service-price .unit { color: var(--text-s); font-size: 12px; }
+
+    /* ========== PROCESS ========== */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 10%;
+      width: 80%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue-m), var(--orange));
+      z-index: 0;
+    }
+    .process-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .step-num {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 16px rgba(10,42,110,.3);
+    }
+    .step-num .step-n { font-size: 10px; opacity: .8; }
+    .step-num .step-icon { font-size: 26px; }
+    .step-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .step-text { font-size: 12px; color: var(--text-s); line-height: 1.5; padding: 0 8px; }
+
+    /* ========== WHY US ========== */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .why-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      text-align: center;
+      transition: background .2s;
+    }
+    .why-card:hover { background: rgba(255,255,255,.12); }
+    .why-icon { font-size: 44px; margin-bottom: 14px; }
+    .why-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--yellow); }
+    .why-text { font-size: 14px; color: rgba(255,255,255,.8); line-height: 1.7; }
+
+    /* ========== PRICING ========== */
+    .pricing-table {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .pricing-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .pricing-table th {
+      background: var(--blue);
+      color: var(--white);
+      padding: 16px 20px;
+      text-align: left;
+      font-size: 14px;
+    }
+    .pricing-table th:last-child { text-align: right; }
+    .pricing-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
+    }
+    .pricing-table tr:last-child td { border-bottom: none; }
+    .pricing-table tr:nth-child(even) td { background: var(--gray); }
+    .pricing-table td:last-child { text-align: right; font-weight: 700; color: var(--red); }
+    .price-note {
+      background: var(--blue-l);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-top: 20px;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .price-note strong { color: var(--blue); }
+
+    /* ========== TESTIMONIALS ========== */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--blue-m);
+    }
+    .stars { color: var(--orange); font-size: 18px; margin-bottom: 12px; }
+    .testimonial-text { font-size: 14px; line-height: 1.8; color: var(--text); margin-bottom: 16px; }
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+    .author-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--blue-l);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+    }
+    .author-info .name { font-weight: 700; font-size: 14px; }
+    .author-info .area { font-size: 12px; color: var(--text-s); }
+
+    /* ========== FAQ ========== */
+    .faq-list { max-width: 800px; margin: 0 auto; }
+    .faq-item {
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+    .faq-q {
+      background: var(--blue);
+      color: var(--white);
+      padding: 18px 24px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      list-style: none;
+      user-select: none;
+    }
+    .faq-q::marker { display: none; }
+    .faq-q-icon {
+      width: 28px; height: 28px;
+      background: var(--yellow);
+      color: var(--blue);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .faq-q .arrow {
+      margin-left: auto;
+      transition: transform .3s;
+      font-size: 18px;
+    }
+    .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
+    .faq-a {
+      background: var(--white);
+      padding: 0 24px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease, padding .3s;
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text);
+    }
+    .faq-item.open .faq-a { max-height: 400px; padding: 20px 24px; }
+    .faq-a-icon { color: var(--red); font-weight: 700; }
+
+    /* ========== FINAL CTA ========== */
+    .final-cta {
+      background: linear-gradient(135deg, #d81f26, #a3000a);
+      padding: 80px 0;
+      text-align: center;
+    }
+    .final-cta h2 {
+      font-size: clamp(24px, 5vw, 44px);
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .final-cta p { color: rgba(255,255,255,.85); font-size: 16px; margin-bottom: 36px; }
+    .btn-final {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--white);
+      color: var(--red);
+      text-decoration: none;
+      border-radius: 60px;
+      padding: 20px 48px;
+      font-weight: 900;
+      font-size: 14px;
+      box-shadow: 0 6px 28px rgba(0,0,0,.2);
+      transition: transform .2s;
+    }
+    .btn-final:hover { transform: scale(1.04); }
+    .btn-final .fn { font-size: clamp(28px, 6vw, 44px); letter-spacing: .03em; }
+    .final-badges {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+    .final-badge {
+      background: rgba(255,255,255,.15);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 6px;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: #111;
+      color: rgba(255,255,255,.6);
+      padding: 40px 0 24px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    .footer-logo { color: var(--white); font-weight: 900; font-size: 18px; margin-bottom: 8px; }
+    .footer-desc { font-size: 13px; line-height: 1.7; }
+    .footer-h { color: var(--white); font-weight: 700; font-size: 14px; margin-bottom: 12px; }
+    .footer-list { list-style: none; }
+    .footer-list li { font-size: 13px; padding: 4px 0; }
+    .footer-list li::before { content: "▸ "; color: var(--orange); }
+    .footer-tel-block { }
+    .footer-tel {
+      color: var(--yellow);
+      font-size: 26px;
+      font-weight: 900;
+      display: block;
+      text-decoration: none;
+      margin-bottom: 4px;
+    }
+    .footer-hours { font-size: 12px; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 20px;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    /* ========== FLOATING CTA ========== */
+    .float-cta {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 200;
+      display: none;
+    }
+    .float-cta.visible { display: block; }
+    .float-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--red);
+      color: var(--white);
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 15px;
+      box-shadow: 0 4px 20px rgba(216,31,38,.5);
+      animation: float-bounce 3s ease-in-out infinite;
+    }
+    @keyframes float-bounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .float-icon { font-size: 22px; }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-steps { grid-template-columns: 1fr; gap: 20px; }
+      .process-steps::before { display: none; }
+      .why-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    @media (max-width: 600px) {
+      .section { padding: 56px 0; }
+      .services-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .hero-content { padding-bottom: 40px; }
+      .sticky-header .inner { flex-wrap: wrap; }
+      .float-cta { bottom: 12px; right: 12px; }
+      .float-btn { padding: 12px 16px; font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== STICKY HEADER ===== -->
+<header class="sticky-header">
+  <div class="inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">🔧</div>
+      <div class="logo-text">
+        水道救急センター
+        <span>Water Emergency Service</span>
+      </div>
+    </a>
+    <div class="header-tel">
+      <span class="tel-label">お急ぎの方はこちら！無料でご相談</span>
+      <a href="tel:0120-000-000" class="tel-number">0120-000-000</a>
+      <span class="tel-sub">24時間365日受付中 ／ 通話料無料</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">🚨 緊急対応中！今すぐ受付可能</div>
+        <h1 class="hero-title">
+          水道・トイレのトラブル<br>
+          <span class="hl">今すぐ解決！</span><br>
+          最短<span class="hl">30分</span>で駆けつけ
+        </h1>
+        <p class="hero-lead">
+          水漏れ・つまり・トイレの故障など<br>
+          水まわりのトラブルはすべてお任せください。<br>
+          24時間365日、迅速&amp;丁寧に対応いたします。
+        </p>
+        <div class="hero-cta-wrap">
+          <a href="tel:0120-000-000" class="btn-hero-tel">
+            <span class="btn-label">今すぐ無料相談 ／ 通話料無料</span>
+            <span class="btn-num">📞 0120-000-000</span>
+            <span class="btn-free">出張費 無料 ／ 見積もり 無料</span>
+          </a>
+        </div>
+        <div class="hero-points">
+          <span class="hero-point">24時間365日対応</span>
+          <span class="hero-point">最短30分で到着</span>
+          <span class="hero-point">見積もり無料</span>
+          <span class="hero-point">作業後のアフター保証</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-illustration">
+          <div class="worker-svg">🧑‍🔧</div>
+          <div class="hero-numbers">
+            <div class="hero-num-item">
+              <div class="hero-num-val">30<span>分</span></div>
+              <div class="hero-num-label">最短到着</div>
+            </div>
+            <div class="hero-num-item">
+              <div class="hero-num-val">365<span>日</span></div>
+              <div class="hero-num-label">年中無休</div>
+            </div>
+            <div class="hero-num-item">
+              <div class="hero-num-val">10<span>万件+</span></div>
+              <div class="hero-num-label">解決実績</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee-bar" aria-hidden="true">
+  <div class="marquee-inner">
+    <span class="marquee-item">トイレつまり</span>
+    <span class="marquee-item">水漏れ修理</span>
+    <span class="marquee-item">排水管つまり</span>
+    <span class="marquee-item">蛇口修理</span>
+    <span class="marquee-item">給湯器トラブル</span>
+    <span class="marquee-item">台所つまり</span>
+    <span class="marquee-item">お風呂の排水詰まり</span>
+    <span class="marquee-item">洗面台修理</span>
+    <span class="marquee-item">トイレつまり</span>
+    <span class="marquee-item">水漏れ修理</span>
+    <span class="marquee-item">排水管つまり</span>
+    <span class="marquee-item">蛇口修理</span>
+    <span class="marquee-item">給湯器トラブル</span>
+    <span class="marquee-item">台所つまり</span>
+    <span class="marquee-item">お風呂の排水詰まり</span>
+    <span class="marquee-item">洗面台修理</span>
+  </div>
+</div>
+
+<!-- ===== TRUST BAND ===== -->
+<section class="trust-band">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon">🏆</div>
+        <div class="trust-num">10<span>万件+</span></div>
+        <div class="trust-label">累計修理実績</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">⏱️</div>
+        <div class="trust-num">30<span>分</span></div>
+        <div class="trust-label">最短到着時間</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">⭐</div>
+        <div class="trust-num">4.9<span>/5.0</span></div>
+        <div class="trust-label">お客様満足度</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🛡️</div>
+        <div class="trust-num">1<span>年保証</span></div>
+        <div class="trust-label">作業アフター保証</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="section section--gray">
+  <div class="container">
+    <p class="badge">対応サービス一覧</p>
+    <h2 class="section-title">水まわりの<span class="accent">あらゆるトラブル</span>に対応</h2>
+    <p class="section-sub">水道・トイレ・キッチン・お風呂・洗面台など、水まわり全般をワンストップで解決します</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-img service-img--blue">🚽</div>
+        <div class="service-body">
+          <h3 class="service-name">トイレのつまり・修理</h3>
+          <p class="service-desc">流れない・水が止まらない・タンクの故障。便器交換からウォシュレット修理まで対応。</p>
+          <div class="service-price">
+            <span class="from">税込</span>
+            <span class="num">¥8,800</span>
+            <span class="unit">〜</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img service-img--teal">🚰</div>
+        <div class="service-body">
+          <h3 class="service-name">水漏れ修理</h3>
+          <p class="service-desc">蛇口・パイプ・床下・壁内の水漏れを迅速に特定して修理。二次被害を防ぎます。</p>
+          <div class="service-price">
+            <span class="from">税込</span>
+            <span class="num">¥6,600</span>
+            <span class="unit">〜</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img service-img--green">🍽️</div>
+        <div class="service-body">
+          <h3 class="service-name">台所・排水管つまり</h3>
+          <p class="service-desc">油汚れ・食材カスによる詰まりを高圧洗浄で完全除去。臭いも同時解決。</p>
+          <div class="service-price">
+            <span class="from">税込</span>
+            <span class="num">¥8,800</span>
+            <span class="unit">〜</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img service-img--orange">🛁</div>
+        <div class="service-body">
+          <h3 class="service-name">お風呂・浴室トラブル</h3>
+          <p class="service-desc">排水詰まり・追い焚き故障・シャワー水漏れなど。浴室全体をトータルケア。</p>
+          <div class="service-price">
+            <span class="from">税込</span>
+            <span class="num">¥7,700</span>
+            <span class="unit">〜</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img service-img--red">🪥</div>
+        <div class="service-body">
+          <h3 class="service-name">洗面台・洗濯機周り</h3>
+          <p class="service-desc">洗面台の水漏れ・詰まり・蛇口交換。洗濯機の排水ホース・防水パントラブルも対応。</p>
+          <div class="service-price">
+            <span class="from">税込</span>
+            <span class="num">¥6,600</span>
+            <span class="unit">〜</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img service-img--purple">🔥</div>
+        <div class="service-body">
+          <h3 class="service-name">給湯器・ガス関連</h3>
+          <p class="service-desc">お湯が出ない・給湯器エラー・水圧低下など。各メーカー対応、交換・修理を迅速に。</p>
+          <div class="service-price">
+            <span class="from">税込</span>
+            <span class="num">¥11,000</span>
+            <span class="unit">〜</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="section">
+  <div class="container">
+    <p class="badge">ご利用の流れ</p>
+    <h2 class="section-title">お電話から<span class="accent">解決まで</span>わずか5ステップ</h2>
+    <p class="section-sub">ご連絡をいただいてから最短30分でスタッフが到着、その場で修理いたします</p>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">
+          <span class="step-n">STEP 1</span>
+          <span class="step-icon">📞</span>
+        </div>
+        <div class="step-title">お電話・無料相談</div>
+        <p class="step-text">症状をお聞きし、概算料金をご案内。24時間受付。</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">
+          <span class="step-n">STEP 2</span>
+          <span class="step-icon">🚗</span>
+        </div>
+        <div class="step-title">スタッフが急行</div>
+        <p class="step-text">最短30分でご自宅へ。出張費は完全無料です。</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">
+          <span class="step-n">STEP 3</span>
+          <span class="step-icon">🔍</span>
+        </div>
+        <div class="step-title">現地調査・見積もり</div>
+        <p class="step-text">原因を調査し、明確な金額をご提示。ご納得後に着工。</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">
+          <span class="step-n">STEP 4</span>
+          <span class="step-icon">🔧</span>
+        </div>
+        <div class="step-title">修理・作業</div>
+        <p class="step-text">丁寧かつ迅速に修理。作業時間は最短15分〜。</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">
+          <span class="step-n">STEP 5</span>
+          <span class="step-icon">✅</span>
+        </div>
+        <div class="step-title">確認・お支払い</div>
+        <p class="step-text">仕上がりをご確認後にお支払い。1年間の保証付き。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY US ===== -->
+<section class="section section--blue">
+  <div class="container">
+    <p class="badge" style="background:var(--yellow);color:var(--blue);">選ばれる理由</p>
+    <h2 class="section-title">なぜ水道救急センターが<span style="color:var(--yellow)">選ばれるのか</span></h2>
+    <p class="section-sub">全国10万件以上の修理実績が証明する、私たちの強みをご紹介します</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <div class="why-title">業界最速クラスの対応力</div>
+        <p class="why-text">お電話から最短30分でスタッフが到着。深夜・早朝・休日も追加料金なしで即日対応。水のトラブルは一刻を争うからこそ、スピードにこだわります。</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💰</div>
+        <div class="why-title">明朗会計・追加料金なし</div>
+        <p class="why-text">出張費・見積もり費は完全無料。作業前に必ず金額をご提示し、ご納得いただいてからの着工です。後から「実は別料金が…」は一切ありません。</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🛡️</div>
+        <div class="why-title">1年間のアフター保証</div>
+        <p class="why-text">修理後も安心。万が一同じ箇所でトラブルが再発した場合、保証期間内は無料で再修理いたします。長期的なお付き合いを大切にしています。</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🏅</div>
+        <div class="why-title">資格保有の技術者が担当</div>
+        <p class="why-text">給水装置工事主任技術者など国家資格を持つスタッフが対応。制服・社用車での訪問ですぐわかる、安心・安全なサービスを提供します。</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🗾</div>
+        <div class="why-title">全国対応ネットワーク</div>
+        <p class="why-text">全国各地に拠点を持ち、お住まいのエリアに最も近いスタッフが駆けつけます。都市部だけでなく、郊外・地方にも対応可能です。</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🌙</div>
+        <div class="why-title">深夜・早朝も料金据え置き</div>
+        <p class="why-text">夜中の水漏れや早朝のつまりも追加料金なし。土日祝日も同一料金でご対応します。「こんな時間に…」と遠慮なく、いつでもお電話ください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section class="section section--gray">
+  <div class="container">
+    <p class="badge">料金案内</p>
+    <h2 class="section-title"><span class="accent">明朗会計</span>で安心。料金の目安</h2>
+    <p class="section-sub">出張費・見積もり費は無料。すべて税込み表示です</p>
+    <div class="pricing-table">
+      <table>
+        <thead>
+          <tr>
+            <th>サービス内容</th>
+            <th>症状・作業内容</th>
+            <th>料金（税込）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🚽 トイレつまり除去</td>
+            <td>ラバーカップ・ローポンプ使用</td>
+            <td>¥8,800〜</td>
+          </tr>
+          <tr>
+            <td>🚽 トイレつまり（重症）</td>
+            <td>ワイヤー・高圧洗浄での除去</td>
+            <td>¥22,000〜</td>
+          </tr>
+          <tr>
+            <td>🚰 蛇口水漏れ修理</td>
+            <td>パッキン・カートリッジ交換</td>
+            <td>¥6,600〜</td>
+          </tr>
+          <tr>
+            <td>🚰 蛇口本体交換</td>
+            <td>部品代別途・各メーカー対応</td>
+            <td>¥11,000〜</td>
+          </tr>
+          <tr>
+            <td>🍽️ 台所つまり除去</td>
+            <td>薬剤・ワイヤー・高圧洗浄</td>
+            <td>¥8,800〜</td>
+          </tr>
+          <tr>
+            <td>🛁 お風呂排水つまり</td>
+            <td>ヘアキャッチャー〜排水管洗浄</td>
+            <td>¥7,700〜</td>
+          </tr>
+          <tr>
+            <td>🔥 給湯器交換</td>
+            <td>本体代別途・標準設置工事</td>
+            <td>¥22,000〜</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="price-note">
+      <strong>📋 料金に関する大切なご案内</strong><br>
+      上記はあくまで目安料金です。状況によって異なる場合がございます。<strong>現地調査・お見積もりは完全無料</strong>ですので、まずはお気軽にご連絡ください。ご納得いただいてからの作業開始ですので、押し売り・追加請求は一切ございません。
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="section">
+  <div class="container">
+    <p class="badge">お客様の声</p>
+    <h2 class="section-title">全国の<span class="accent">お客様から</span>喜びのお声</h2>
+    <p class="section-sub">★4.9 / 5.0 — 1,000件以上のレビューより抜粋</p>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          深夜2時にトイレが詰まってしまい、焦っていたところ、電話して約40分で来てくれました。作業も丁寧で、30分ほどで完全に直してもらえました。こんな時間に対応してくれて本当に助かりました！
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👩</div>
+          <div class="author-info">
+            <div class="name">M.T 様</div>
+            <div class="area">東京都世田谷区 / トイレつまり修理</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          台所の排水が臭くて詰まり気味だったので依頼しました。高圧洗浄で完全にきれいにしてもらい、臭いも完全になくなりました。料金も事前にきちんと説明があり、追加請求もなく安心でした。
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👨</div>
+          <div class="author-info">
+            <div class="name">K.S 様</div>
+            <div class="area">大阪府大阪市 / 台所排水管洗浄</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          蛇口からポタポタ水が漏れていて、水道代が心配でした。即日対応してもらい、部品交換で完璧に修理。スタッフの方が礼儀正しく、作業後の掃除もしてくれてとても満足です。
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👵</div>
+          <div class="author-info">
+            <div class="name">Y.A 様</div>
+            <div class="area">愛知県名古屋市 / 蛇口水漏れ修理</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section section--gray">
+  <div class="container">
+    <p class="badge">よくある質問</p>
+    <h2 class="section-title">お客様からの<span class="accent">よくある質問</span></h2>
+    <p class="section-sub">ご不明な点はお気軽にお電話でもお問い合わせください</p>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <details>
+          <summary class="faq-q">
+            <span class="faq-q-icon">Q</span>
+            深夜・早朝・休日でも対応してもらえますか？
+            <span class="arrow">▼</span>
+          </summary>
+          <div class="faq-a">
+            <span class="faq-a-icon">A</span>
+            はい、24時間365日（深夜・早朝・土日祝日）対応しております。深夜・早朝・休日の割増料金などは一切いただいておりません。いつでもお気軽にご連絡ください。
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary class="faq-q">
+            <span class="faq-q-icon">Q</span>
+            見積もりは無料ですか？断ることはできますか？
+            <span class="arrow">▼</span>
+          </summary>
+          <div class="faq-a">
+            <span class="faq-a-icon">A</span>
+            出張費・見積もり費は完全無料です。また、見積もりの結果、ご予算に合わない場合やご都合が悪い場合は、キャンセルしていただいても一切費用はかかりません。安心してご連絡ください。
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary class="faq-q">
+            <span class="faq-q-icon">Q</span>
+            到着までどれくらいかかりますか？
+            <span class="arrow">▼</span>
+          </summary>
+          <div class="faq-a">
+            <span class="faq-a-icon">A</span>
+            ご連絡をいただいてから最短30分でお伺いします（エリアや交通状況により異なります）。到着目安はオペレーターがお電話でお伝えしますので、お気軽にご確認ください。
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary class="faq-q">
+            <span class="faq-q-icon">Q</span>
+            支払い方法は何が使えますか？
+            <span class="arrow">▼</span>
+          </summary>
+          <div class="faq-a">
+            <span class="faq-a-icon">A</span>
+            現金・クレジットカード（VISA・Mastercard・JCB・AMEX等）・QR決済（PayPay、LINE Pay等）に対応しております。ご希望の支払い方法をスタッフにお申し付けください。
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary class="faq-q">
+            <span class="faq-q-icon">Q</span>
+            賃貸物件でも依頼できますか？
+            <span class="arrow">▼</span>
+          </summary>
+          <div class="faq-a">
+            <span class="faq-a-icon">A</span>
+            もちろんご依頼いただけます。ただし、賃貸物件の場合は修理費用の負担について管理会社・大家さんとのご相談が必要になる場合があります。請求書・領収書の発行にも対応しておりますのでご相談ください。
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary class="faq-q">
+            <span class="faq-q-icon">Q</span>
+            修理後の保証はありますか？
+            <span class="arrow">▼</span>
+          </summary>
+          <div class="faq-a">
+            <span class="faq-a-icon">A</span>
+            はい、作業完了後1年間のアフター保証をご提供しております。同じ箇所で同じ症状が再発した場合は、保証期間内であれば無料で再修理いたします（部品代が発生する場合を除く）。
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta">
+  <div class="container">
+    <h2>水まわりのトラブル、<br>今すぐ解決しましょう！</h2>
+    <p>24時間365日受付中。まずはお気軽にご相談ください。</p>
+    <a href="tel:0120-000-000" class="btn-final">
+      <span>今すぐ無料相談 — 通話料無料</span>
+      <span class="fn">📞 0120-000-000</span>
+      <span style="font-size:13px;margin-top:4px;">出張費無料 ／ 見積もり無料 ／ 365日対応</span>
+    </a>
+    <div class="final-badges">
+      <span class="final-badge">✅ 最短30分到着</span>
+      <span class="final-badge">✅ 追加料金なし</span>
+      <span class="final-badge">✅ 1年保証</span>
+      <span class="final-badge">✅ 資格保有スタッフ</span>
+      <span class="final-badge">✅ 全国対応</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">🔧 水道救急センター</div>
+        <p class="footer-desc">
+          水道・トイレのトラブルを24時間365日対応。<br>
+          最短30分で全国に駆けつけます。<br>
+          出張費・見積もり無料。
+        </p>
+      </div>
+      <div>
+        <div class="footer-h">対応サービス</div>
+        <ul class="footer-list">
+          <li>トイレのつまり・修理</li>
+          <li>水漏れ修理・蛇口交換</li>
+          <li>台所・排水管つまり</li>
+          <li>お風呂・浴室トラブル</li>
+          <li>洗面台・洗濯機周り</li>
+          <li>給湯器・ガス関連</li>
+        </ul>
+      </div>
+      <div class="footer-tel-block">
+        <div class="footer-h">お問い合わせ</div>
+        <a href="tel:0120-000-000" class="footer-tel">📞 0120-000-000</a>
+        <p class="footer-hours">
+          受付時間：24時間365日（年中無休）<br>
+          通話料：無料<br>
+          出張費：無料　見積もり：無料
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 水道救急センター All Rights Reserved.</p>
+      <p style="margin-top:6px;">
+        <a href="#" style="color:inherit;text-decoration:none;margin:0 10px;">プライバシーポリシー</a>
+        <a href="#" style="color:inherit;text-decoration:none;margin:0 10px;">特定商取引法に基づく表記</a>
+        <a href="#" style="color:inherit;text-decoration:none;margin:0 10px;">会社概要</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== FLOATING CTA ===== -->
+<div class="float-cta" id="floatCta">
+  <a href="tel:0120-000-000" class="float-btn">
+    <span class="float-icon">📞</span>
+    <span>今すぐ無料相談</span>
+  </a>
+</div>
+
+<script>
+  // Floating CTA visibility
+  const floatCta = document.getElementById('floatCta');
+  window.addEventListener('scroll', () => {
+    floatCta.classList.toggle('visible', window.scrollY > 300);
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item details').forEach(details => {
+    details.addEventListener('toggle', () => {
+      details.closest('.faq-item').classList.toggle('open', details.open);
+    });
+  });
+</script>
+
+</body>
+</html>
